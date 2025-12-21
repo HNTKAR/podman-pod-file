@@ -60,11 +60,13 @@ systemctl --user start podman_pod_file
 
 ```bash
 # Build Container
-podman build --tag file-samba --file samba/Dockerfile .
-podman build --tag file-nginx --file nginx/Dockerfile .
+cd samba
+podman build --tag file-samba --file Dockerfile .
+cd ../nginx
+podman build --tag file-nginx --file Dockerfile .
 
 # Creeate Pod
-podman pod create --replace --publish 13137-13138:13137-13138/udp --publish 13139:13139/tcp --publish 44445:44445/tcp --publish 44443:44443/tcp --publish 58080:58080/tcp --name file
+podman pod create --replace --publish 13137-13138:13137-13138/udp --publish 13139:13139/tcp --publish 44445:44445/tcp --publish 8443:8443/tcp --publish 8080:8080/tcp --name file
 
 # Start file-samba container
 podman run --pod file --name file-samba --mount type=volume,source=file-samba,destination=/V --detach --replace file-samba
