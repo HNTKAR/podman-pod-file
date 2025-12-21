@@ -1,0 +1,7 @@
+[Container]
+ServiceName=podman_container_file_samba
+ContainerName=file-samba
+Image=localhost/file-samba
+Pod=file.pod
+AutoUpdate=local
+Mount=type=volume,source=file-samba.volume,destination=/V

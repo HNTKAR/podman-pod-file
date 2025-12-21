@@ -1,0 +1,3 @@
+[Volume]
+ServiceName=podman_volume_file_nginx
+VolumeName=file-nginx

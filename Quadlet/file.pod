@@ -1,0 +1,12 @@
+[Install]
+WantedBy=default.target
+
+[Pod]
+ServiceName=podman_pod_file
+PodName=file
+PublishPort=13137:13137/udp
+PublishPort=13138:13138/udp
+PublishPort=13139:13139/tcp
+PublishPort=44445:44445/tcp
+PublishPort=8080:8080/tcp
+PublishPort=8443:8443/tcp
