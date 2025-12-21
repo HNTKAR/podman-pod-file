@@ -29,6 +29,7 @@
 ### 共通
 
 ```sh
+cd /Path/to/podman-pod-file
 sudo firewall-cmd --permanent --new-service=user-samba
 sudo firewall-cmd --permanent --service=user-samba --add-port=44445/tcp
 sudo firewall-cmd --permanent --service=user-samba --add-port=13139/tcp
@@ -46,7 +47,6 @@ sudo firewall-cmd --reload
 ### Quadlet使用時
 
 ```sh
-cd /Path/to/file_podman
 mkdir -p $HOME/.config/containers/systemd/
 cp Quadlet/* $HOME/.config/containers/systemd/
 systemctl --user daemon-reload
@@ -59,8 +59,6 @@ systemctl --user start podman_pod_file
 ### Quadlet非使用時
 
 ```bash
-cd Path/to/file_podman
-
 # Build Container
 podman build --tag file-samba --file samba/Dockerfile .
 podman build --tag file-nginx --file nginx/Dockerfile .
