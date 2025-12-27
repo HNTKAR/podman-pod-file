@@ -1,3 +1,0 @@
-[Volume]
-ServiceName=podman_volume_file_samba
-VolumeName=file-samba
