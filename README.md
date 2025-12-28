@@ -42,6 +42,7 @@ sudo firewall-cmd --permanent --service=user-nginx --add-port=58080/tcp
 sudo firewall-cmd --permanent --add-service=user-nginx
 
 sudo firewall-cmd --reload
+mkdir -p /home/podman/run
 ```
 
 ### Quadlet使用時
@@ -70,5 +71,6 @@ podman pod create --replace --publish 13137-13138:13137-13138/udp --publish 1313
 
 # Start file-samba container
 podman run --pod file --name file-samba --mount type=volume,source=file-samba,destination=/V --detach --replace file-samba
-podman run --pod file --name file-nginx --mount type=volume,source=file-nginx,destination=/V --detach --replace file-nginx
+# Start file-nginx container
+podman run --pod file --name file-nginx --mount type=volume,source=file-nginx,destination=/V --mount type=bind,source=/home/podman/run,destination=/run/podman --detach --replace file-nginx
 ```
