@@ -1,0 +1,8 @@
+[Install]
+WantedBy=default.target
+
+[Pod]
+ServiceName=podman_pod_file
+PodName=file
+Network=p-internal.network
+Network=p-external.network
