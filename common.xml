@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <project path="pod" name="podman-pod-file" />
+    <project path="container/samba" name="podman-container-samba" />
+    <project path="container/nginx" name="podman-container-nginx" />
+</manifest>
