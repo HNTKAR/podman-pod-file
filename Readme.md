@@ -5,20 +5,31 @@
 
 ## 使い方
 
-1. ディレクトリを作成します。
+1. ディレクトリを作成します
 
-```bash
-mkdir file
-cd file
-```
+    ```bash
+    mkdir file
+    cd file
+    ```
 
-2. リポジトリをクローンします。
+1. リポジトリをクローンします。
 
-```bash
-repo init -u ssh://git@github.com/HNTKAR/podman-pod-file.git -b manifest/main -m 
-repo sync
-repo start dev  # または main
-```
+   ### mainブランチを使用する場合
+
+    ```bash
+    # mainブランチを使用する場合
+    repo init -u ssh://git@github.com/HNTKAR/podman-pod-file.git -b manifest/main -m main.xml
+    repo sync
+    repo start main
+    ```
+
+   ### devブランチを使用する場合
+
+    ```bash
+    repo init -u ssh://git@github.com/HNTKAR/podman-pod-file.git -b manifest/main -m dev.xml
+    repo sync
+    repo start dev
+    ```
 
 ## 注意事項
 
